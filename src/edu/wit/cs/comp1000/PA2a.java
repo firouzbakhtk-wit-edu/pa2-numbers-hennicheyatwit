@@ -16,7 +16,7 @@ public class PA2a {
 	        int[] numbers = new int[5];
 	        
 	        // asks user for input
-	        System.out.println("Enter five whole numbers with a space between each number :");
+	        System.out.println("Enter five whole numbers: ");
 	        for (int i = 0; i < 5; i++) {
 	            numbers[i] = scanner.nextInt(); 
 	        }
@@ -58,12 +58,12 @@ public class PA2a {
 	        }
 	        
 	        // Output results
-	        System.out.println("The sum of the positive numbers: " + sumPositive);
-	        System.out.println("The sum of the non-positive numbers: " + sumNonPositive);
-	        System.out.println("The sum of the numbers: " + sumAll);
-	        System.out.printf("The average of the positive numbers: %.2f\n", avgPositive);
-	        System.out.printf("The average of the non-positive numbers: %.2f\n", avgNonPositive);
-	        System.out.printf("The average of the numbers: %.2f\n", avgAll);
+	        System.out.println("The sum of the 2 positive numbers: " + sumPositive);
+	        System.out.println("The sum of the 3 non-positive numbers: " + sumNonPositive);
+	        System.out.println("The sum of the 5 numbers: " + sumAll);
+	        System.out.printf("The average of the positive 2 numbers: %.2f\n", avgPositive);
+	        System.out.printf("The average of the 3 non-positive numbers: %.2f\n", avgNonPositive);
+	        System.out.printf("The average of the 5 numbers: %.2f\n", avgAll);
 	        
 	        scanner.close(); // Close the scanner
 	}
