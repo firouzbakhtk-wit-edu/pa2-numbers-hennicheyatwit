@@ -10,35 +10,38 @@ public class PA2b {
 		// TODO: write your code here
 		
 	        // Create a Scanner object for user input
-	        Scanner scanner = new Scanner(System.in);
-	        
-	        // Prompt user for input
-	        System.out.print("Enter coefficients a, b, and c (separated by spaces): ");
+		 Scanner scanner = new Scanner(System.in);
+
+	        // Prompt the user to enter values for a, b, and c
+	        System.out.print("Enter a b c: ");
 	        double a = scanner.nextDouble();
 	        double b = scanner.nextDouble();
 	        double c = scanner.nextDouble();
-	        
-	        // Calculate the discriminant
+
+	        // Calculate the discriminant (b^2 - 4ac)
 	        double discriminant = b * b - 4 * a * c;
 
-	        // Determine the roots based on the discriminant
 	        if (discriminant < 0) {
-	            // If the discriminant is negative, roots are imaginary
+	            // Case 1: Imaginary roots
 	            System.out.println("Roots: imaginary");
 	        } else if (discriminant == 0) {
-	            // If the discriminant is zero, there is one real root
+	            // Case 2: One real root (double root)
 	            double root = -b / (2 * a);
-	            System.out.printf("Root: %.2f\n", root);
+	            System.out.printf("Root: %.2f%n", root);
 	        } else {
-	            // If the discriminant is positive, there are two real roots
-	            double root1 = (-b + Math.sqrt(discriminant)) / (2 * a);
-	            double root2 = (-b - Math.sqrt(discriminant)) / (2 * a);
+	            // Case 3: Two real roots
+	            double root1 = (-b - Math.sqrt(discriminant)) / (2 * a);
+	            double root2 = (-b + Math.sqrt(discriminant)) / (2 * a);
 
 	            // Print the roots in increasing order
-	            System.out.printf("Roots: %.2f, %.2f\n", Math.min(root1, root2), Math.max(root1, root2));
+	            if (root1 < root2) {
+	                System.out.printf("Roots: %.2f, %.2f%n", root1, root2);
+	            } else {
+	                System.out.printf("Roots: %.2f, %.2f%n", root2, root1);
+	            }
 	        }
 
-	        // Close the scanner
+	        // Close the scanner to avoid resource leaks
 	        scanner.close();
 	}
 
